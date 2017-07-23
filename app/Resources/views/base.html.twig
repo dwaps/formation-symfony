@@ -3,11 +3,28 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}DWAPS Formation{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+
+        {% block stylesheets %}
+        {% stylesheets
+            'css/bootstrap.css'
+            'css/font-awesome.css'
+            'bundles/frontend/style.css'
+            'bundles/backend/style.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}">
+        {% endstylesheets %}
+        {% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        {% javascripts
+            'js/jquery.min.js'
+            'js/jquery-ui.min.js'
+            'js/bootstrap.js' %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
