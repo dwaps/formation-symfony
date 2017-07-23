@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class BackendController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="backend_home")
      */
     public function indexAction()
     {
