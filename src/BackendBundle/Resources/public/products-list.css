@@ -1,0 +1,13 @@
+.products-list {
+  margin-left: 25%;
+}
+
+.products-item {
+  margin: 20px;
+  opacity: 0.8;
+}
+
+.products-item p {
+  font-size: 0.9em;
+  margin: 20px;
+}

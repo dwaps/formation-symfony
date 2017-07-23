@@ -6,8 +6,108 @@
 
 {% block body %}
 
-  <h1>BACK END</h1>
+  <div class="container-fluid">
 
-  <a href="{{ path('frontend_home') }}">Retour à l'accueil</a>
+    <div class="row">
+      <div class="col-md-3 primary menu-admin">
+        <div class="text-center">
+          <a href="{{ path('frontend_home') }}">
+            <span class="glyphicon glyphicon-home transition"></span>
+          </a>
+          <h3>Espace entreprise</h3>
+        </div>
+        <ul>
+          <li>
+            <div class="input-group">
+              <input type="search" class="form-control" id="exampleInputAmount" placeholder="Recherche">
+              <a class="input-group-addon transition"><span class="glyphicon glyphicon-search transition"></span></a>
+            </div>
+          </li>
+          <li><a href="#" class="secoundary transition">Produits</a></li>
+          <li><a href="#" class="secoundary transition">Commandes</a></li>
+          <li><a href="#" class="secoundary transition">Deconnexion</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-9 products-list">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Liste des commandes</h1>
+          </div>
+        </div>
+
+        <!-- LISTE DES COMMANDES (générales) -->
+        {% for command in 1..4 %}
+        <div class="row">
+          <div class="col-md-12">
+          
+            <table class="table table-striped table-hover">
+              <tr data-toggle="collapse" data-target="#collapseExample{{loop.index}}">
+                <td>
+                  2017-02-16<br>
+                  19:07:26<br>
+                  3 produits</td>
+                <td>
+                  Numéro :<br>
+                  COMM000000{{loop.index}}
+                </td>
+                <td>
+                  Paiement reçu<br>
+                  30€
+                </td>
+              </tr>
+            </table>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="collapse" id="collapseExample{{loop.index}}">
+              <div class="row">
+                <div class="col-md-offset-1 col-md-10">
+                  <select>
+                    <option value="paiement-received">Paiement reçu</option>
+                    <option value="account">Acompte</option>
+                  </select>
+                  <button class="btn btn-small primary">Valider</button>
+                </div>
+              </div>
+
+              <!-- LISTE DES COMMANDES (détails) -->
+              {% for product in 1..3 %}
+              <div class="row">
+                <div class="col-md-offset-1 col-md-10">
+
+                  <table class="table table-striped table-condensed table-bordered products-item">
+                    <tr>
+                      <th>Produit {{ loop.index }}</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <p>
+                          <strong>Description :</strong><br>
+                          Description du produit {{ loop.index }}
+                          <br>
+                          <strong>Prix unitaire :</strong> 10€<br>
+                          <strong>Quantité :</strong> 3
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
     
 {% endblock %}

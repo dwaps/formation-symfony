@@ -1,0 +1,11 @@
+/*
+Charte graphique :
+primary = #004F60 hsl(191,20%,30%)
+secoundary = #CF9543 hsl(35,68%,81%)
+font-light = #E6E4E4
+*/
+
+body {
+  font-size: 100%;
+  font-size: 2em;
+}

@@ -72,9 +72,9 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
-
-# Assetic
+# Assetic Configuration
 assetic:
+
     filters:
         lessphp:
             file: "%kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php"

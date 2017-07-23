@@ -6,8 +6,15 @@
 
 {% block body %}
 
-  <h1>FRONT END</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>FRONT END</h1>
+        <a href="{{ path('backend_home') }}">Administration</a>
+      </div>
+    </div>
+  </div>
 
-  <a href="{{ path('backend_home') }}">Administration</a>
+
     
 {% endblock %}
